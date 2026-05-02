@@ -1,29 +1,57 @@
-import { PropsWithChildren } from "react"
+import { PropsWithChildren } from "react";
+import { twMerge } from "tailwind-merge";
 
-export const HeroOrbit = ({ 
-    children, 
-    size,
-    rotation 
-}: PropsWithChildren<{ size: number; rotation: number; }>) => {
-    return (
-    <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 '>
-      { /* {centering} */ }
-      <div 
-        className='flex items-start justify-start' 
-        style={{ 
+export const HeroOrbit = ({
+  children,
+  size,
+  rotation,
+  shouldOrbit = false,
+  shouldSpin = false,
+  spinDuration,
+  orbitDuration,
+}: PropsWithChildren<{
+  size: number;
+  rotation: number;
+  shouldOrbit?: boolean;
+  shouldSpin?: boolean;
+  spinDuration?: string;
+  orbitDuration?: string;
+}>) => {
+  return (
+    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div
+        className={twMerge(shouldOrbit === true && "animate-spin")}
+        style={{
+          animationDuration: orbitDuration,
+        }}
+      >
+        {/* {centering} */}
+        <div
+          className="flex items-start justify-start"
+          style={{
             transform: `rotate(${rotation}deg)`,
-            height: `${size}px`, 
-            width: `${size}px`
-        }}>
-        { /* {orbit} */ }
-        <div 
-            className="inline-flex" 
+            height: `${size}px`,
+            width: `${size}px`,
+          }}
+        >
+          <div
+            className={twMerge(shouldSpin === true && "animate-spin")}
             style={{
-                transform: `rotate(${rotation * -1}deg)`
-            }}>
-          {children}
+              animationDuration: spinDuration,
+            }}
+          >
+            {/* {orbit} */}
+            <div
+              className="inline-flex"
+              style={{
+                transform: `rotate(${rotation * -1}deg)`,
+              }}
+            >
+              {children}
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    )
-}
+  );
+};
