@@ -429,7 +429,7 @@ export const AboutSection = () => {
                 <Image
                   src={smileMemoji}
                   alt="smiling memoji"
-                  className="size-20"
+                  className="size-20 px-1 py-0.5"
                 />
               </div>
             </Card>
