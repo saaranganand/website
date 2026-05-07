@@ -1,7 +1,9 @@
 import React from "react";
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import vibe from "@/assets/images/home-loggedin.png";
+import hockey from "@/assets/images/hockey.png";
+import medical from "@/assets/images/medical.png";
+import speakswarm from "@/assets/images/bannerimage_placeholder.png";
+import netai from "@/assets/images/1764903068285.jpeg";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -11,40 +13,64 @@ import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "SFU Tangent Lab",
+    year: "2026",
+    title: "SpeakSwarm",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Built novel AI pipeline that generates swarm robot shapes for voice assistants"},
+      { title: "Achieved 92.5% keyword coverage across 40 concepts in evaluation"},
+      { title: "Authored systems paper submitted to ACM UIST 2026, a top HCI conference"},
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    image: speakswarm,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "ExploreCSR",
+    year: "2025",
+    title: "netAI",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Built a pipeline that translates natural language into P4_16 network configs" },
+      { title: "Implemented compiler error feedback to the LLM for retry" },
+      { title: "Verified generated programs via p4c in Docker and persisted results to PostgreSQL" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "https://github.com/saaranganand/netAI",
+    image: netai,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "CMPT 419",
+    year: "2024",
+    title: "Surgical VQA Pipeline",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Built a pipeline answering questions from trauma simulation videos" },
+      { title: "Benchmarked 3 models across zero-shot configs using Accuracy & F1-score" },
+      { title: "Fine-tuned CLIP and ViLT via cross-entropy classification" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://github.com/saaranganand/medical-vqa-pipeline",
+    image: medical,
+  },
+  {
+    company: "CMPT 276",
+    year: "2024",
+    title: "Vibe",
+    results: [
+      { title: "Led a team of 5 to develop a fully-functional social media music platform" },
+      { title: "Built with Java and PostgreSQL, containerized with Docker" },
+      { title: "Integrated MusicBrainz and Spotify APIs for user-matching" },
+    ],
+    link: "https://github.com/saaranganand/vibe-276",
+    image: vibe,
+  },
+  {
+    company: "CMPT 371",
+    year: "2025",
+    title: "Air Hockey",
+    results: [
+      { title: "Built a multiplayer game in Python using a client-server architecture" },
+      { title: "Implemented game physics, collision detection, and synchronized server state" },
+      { title: "Designed a JSON server communication protocol with mutex locking" },
+    ],
+    link: "https://github.com/saaranganand/air-hockey",
+    image: hockey,
   },
 ];
 
@@ -54,7 +80,7 @@ export const ProjectsSection = () => {
       <div className="container">
         <SectionHeader
           eyebrow="Real-World Results"
-          title="My Projects"
+          title="Featured Projects"
           description="Some of the things I've worked on."
         />
 
@@ -62,12 +88,13 @@ export const ProjectsSection = () => {
           {portfolioProjects.map((project, projectIndex) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:pl-20 lg:pr-0 sticky"
               style={{
-                top: `calc(64px + ${projectIndex * 40}px`,
+                top: `calc(64px + ${projectIndex * 40}px)`,
+                zIndex: projectIndex + 1,
               }}
             >
-              <div className="lg:grid lg:grid-cols-2 lg:gap-16">
+              <div className="lg:grid lg:grid-cols-[45%_55%] lg:gap-0">
                 <div className="lg:pb-16">
                   <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                     <span>{project.company}</span>
@@ -91,17 +118,17 @@ export const ProjectsSection = () => {
                   </ul>
 
                   <a href="project.link">
-                    <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
+                    <button className="bg-white text-gray-950 hover:bg-white/70 transition duration-200 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
                       <span>Visit Github Repository</span>
                       <ArrowUpRightIcon className="size-4" />
                     </button>
                   </a>
                 </div>
-                <div className="relative">
+                <div className="relative overflow-hidden mt-8 h-64 md:h-80 lg:mt-0 lg:h-full">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                    className="absolute inset-0 w-full h-full object-fill"
                   />
                 </div>
               </div>
