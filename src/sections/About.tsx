@@ -312,14 +312,14 @@ const toolboxItems = [
 
 const hobbies = [
   {
-    title: "Painting",
-    emoji: "🎨",
+    title: "Drumming",
+    emoji: "🥁",
     left: "5%",
     top: "5%",
   },
   {
-    title: "Photography",
-    emoji: "📸",
+    title: "Badminton",
+    emoji: "🏸",
     left: "50%",
     top: "5%",
   },
@@ -348,8 +348,8 @@ const hobbies = [
     top: "65%",
   },
   {
-    title: "Reading",
-    emoji: "📚",
+    title: "Biking",
+    emoji: "🚲",
     left: "45%",
     top: "70%",
   },
@@ -361,9 +361,9 @@ export const AboutSection = () => {
     <div id="about" className="py-20 lg:py-28">
       <div className="container">
         <SectionHeader
-          eyebrow="About Me"
-          title="A Glimpse Into My World"
-          description="Learn more about who I am, what I do, and what inspires me."
+          eyebrow="A little background"
+          title="About Me"
+          description="Learn more about who I am, tools I use, and what inspires me."
         />
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
@@ -394,7 +394,7 @@ export const AboutSection = () => {
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
               <CardHeader
                 title="Beyond the Code"
-                description="Explore my interests and hobbies beyond the digital realm."
+                description="Some of my interests and hobbies."
                 className="px-6 py-6"
               />
               <div className="relative flex-1" ref={constraintRef}>
