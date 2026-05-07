@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import memojiImage from "@/assets/images/memoji-computer.png";
 import Image from "next/image";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
@@ -9,6 +12,9 @@ import SparkleIcon from "@/assets/icons/sparkle.svg";
 const AVAILABLE = false;
 
 export const HeroSection = () => {
+  const [glowPos, setGlowPos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div id="home" className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
       <div className="absolute inset-0 pointer-events-none [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
@@ -131,7 +137,21 @@ export const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <a href="#projects" className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl relative overflow-hidden"
+            onMouseMove={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              setGlowPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{
+              background: isHovered
+                ? `radial-gradient(circle 80px at ${glowPos.x}px ${glowPos.y}px, rgba(110,231,183,0.25), rgba(56,189,248,0.15), transparent)`
+                : undefined,
+            }}
+          >
             <span className="font-semibold">Explore My Work</span>
             <ArrowDown className="size-4" />
           </a>

@@ -1,7 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 
 export const ContactSection = () => {
+  const [glowPos, setGlowPos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="py-16 pt-12 lg:py-24 lg:pt-20">
       <div className="container">
@@ -24,8 +30,21 @@ export const ContactSection = () => {
             </div>
             <div>
               <a href="mailto:saaranganand2013@gmail.com">
-                <button className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900 hover:bg-black/70">
-                  <span className="font-semibold ">Contact Me</span>
+                <button
+                  className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900 relative overflow-hidden"
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    setGlowPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+                  }}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                  style={{
+                    background: isHovered
+                      ? `radial-gradient(circle 80px at ${glowPos.x}px ${glowPos.y}px, rgba(110,231,183,0.25), rgba(56,189,248,0.15), transparent), rgb(17,24,39)`
+                      : undefined,
+                  }}
+                >
+                  <span className="font-semibold">Contact Me</span>
                   <ArrowUpRightIcon className="size-4" />
                 </button>
               </a>
