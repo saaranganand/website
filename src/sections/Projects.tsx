@@ -54,8 +54,8 @@ export const ProjectsSection = () => {
       <div className="container">
         <SectionHeader
           eyebrow="Real-World Results"
-          title="Featured Projects"
-          description="See how I transformed concepts into engaging digital experiences."
+          title="My Projects"
+          description="Some of the things I've worked on."
         />
 
         <div className="mt-10 md:mt-20 flex flex-col gap-20">
@@ -92,7 +92,7 @@ export const ProjectsSection = () => {
 
                   <a href="project.link">
                     <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
-                      <span>Visit Live Site</span>
+                      <span>Visit Github Repository</span>
                       <ArrowUpRightIcon className="size-4" />
                     </button>
                   </a>

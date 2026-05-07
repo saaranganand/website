@@ -135,7 +135,7 @@ export const HeroSection = () => {
             <span className="font-semibold">Explore My Work</span>
             <ArrowDown className="size-4" />
           </a>
-          <a href="mailto:saaranganand2013@gmail.com" className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl">
+          <a href="mailto:saaranganand2013@gmail.com" className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl hover:bg-white/70 transition duration-300">
             <span>👋</span>
             <span className="font-semibold">Let's Connect</span>
           </a>
