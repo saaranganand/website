@@ -10,8 +10,8 @@ const words = [
   "User Friendly",
   "Responsive",
   "Maintainable",
-  "Search Optimized",
-  "Usable",
+  "Versatile",
+  "end-to-end",
   "Reliable",
 ];
 

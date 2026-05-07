@@ -5,11 +5,64 @@ import StarIcon from "@/assets/icons/star.svg";
 import bookImage from "@/assets/images/book-cover.png";
 import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
+import TypescriptIcon from "@/assets/icons/ts.svg";
+import TailwindIcon from "@/assets/icons/tailwind.svg";
+import JavaIcon from "@/assets/icons/java-brands-solid-full.svg";
 import CssIcon from "@/assets/icons/css3.svg";
+import CIcon from "@/assets/icons/c.svg";
+import CsharpIcon from "@/assets/icons/csharp-original.svg";
+import CppIcon from "@/assets/icons/cplusplus.svg";
+import RIcon from "@/assets/icons/r.svg";
+import BashIcon from "@/assets/icons/gnubash.svg";
+import LatexIcon from "@/assets/icons/latex.svg";
+import TorchIcon from "@/assets/icons/pytorch.svg";
+import HuggingIcon from "@/assets/icons/huggingface.svg";
+import MPLIcon from "@/assets/icons/matplotlib-original.svg";
+import ClaudeIcon from "@/assets/icons/claude.svg";
+import NextIcon from "@/assets/icons/nextdotjs.svg";
+import NodeIcon from "@/assets/icons/nodedotjs.svg";
+import FlaskIcon from "@/assets/icons/flask.svg";
+import SprIcon from "@/assets/icons/springboot.svg";
+import UnityIcon from "@/assets/icons/unity.svg";
+import GodotIcon from "@/assets/icons/godotengine.svg";
+import RaylibIcon from "@/assets/icons/raylib.svg";
+import SDLIcon from "@/assets/icons/sdl-original.svg";
+import OdinIcon from "@/assets/icons/odin.svg";
+import MonogameIcon from "@/assets/icons/monogame.svg";
+import OpenGLIcon from "@/assets/icons/opengl.svg";
+import DockerIcon from "@/assets/icons/docker.svg";
+import GCPIcon from "@/assets/icons/googlecloud.svg";
+import ActionsIcon from "@/assets/icons/githubactions.svg";
+import PostgresIcon from "@/assets/icons/postgresql.svg";
+import CmakeIcon from "@/assets/icons/cmake.svg";
+import GradleIcon from "@/assets/icons/gradle.svg";
+import MavenIcon from "@/assets/icons/apachemaven.svg";
+import PostmanIcon from "@/assets/icons/postman.svg";
+import JiraIcon from "@/assets/icons/jira.svg";
+import FigmaIcon from "@/assets/icons/figma.svg";
+import MintIcon from "@/assets/icons/linuxmint.svg";
+import PoposIcon from "@/assets/icons/popos.svg";
+import FedoraIcon from "@/assets/icons/fedora.svg";
+import AndroidIcon from "@/assets/icons/android.svg";
+import VScodeIcon from "@/assets/icons/vscode-original.svg";
+import PyCharmIcon from "@/assets/icons/pycharm.svg";
+import IntellijIcon from "@/assets/icons/intellijidea.svg";
+import CLionIcon from "@/assets/icons/clion.svg";
+import XCodeIcon from "@/assets/icons/xcode.svg";
+import NvimIcon from "@/assets/icons/neovim.svg";
+import ffmpegIcon from "@/assets/icons/ffmpeg.svg";
+import JnoteIcon from "@/assets/icons/jupyter.svg";
+import OpencvIcon from "@/assets/icons/opencv.svg";
+import SKLIcon from "@/assets/icons/scikitlearn.svg";
+import NumpyIcon from "@/assets/icons/numpy.svg";
+import PandasIcon from "@/assets/icons/pandas.svg";
+import KotlinIcon from "@/assets/icons/kotlin.svg";
+import GitIcon from "@/assets/icons/git.svg";
+import LuaIcon from "@/assets/icons/lua.svg";
 import HTMLIcon from "@/assets/icons/html5.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import GithubIcon from "@/assets/icons/github.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
+import PythonIcon from "@/assets/icons/python-logo-only.svg";
 import { TechIcon } from "@/components/TechIcon";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
@@ -24,6 +77,10 @@ const toolboxItems = [
     iconType: JavascriptIcon,
   },
   {
+    title: "TypeScript",
+    iconType: TypescriptIcon,
+  },
+  {
     title: "HTML5",
     iconType: HTMLIcon,
   },
@@ -36,12 +93,220 @@ const toolboxItems = [
     iconType: ReactIcon,
   },
   {
-    title: "Chrome",
-    iconType: ChromeIcon,
+    title: "Tailwind",
+    iconType: TailwindIcon,
+  },
+  {
+    title: "Git",
+    iconType: GitIcon,
   },
   {
     title: "Github",
     iconType: GithubIcon,
+  },
+  {
+    title: "Python",
+    iconType: PythonIcon,
+  },
+  {
+    title: "C",
+    iconType: CIcon,
+  },
+  {
+    title: "C++",
+    iconType: CppIcon,
+  },
+  {
+    title: "Java",
+    iconType: JavaIcon,
+  },
+  {
+    title: "C#",
+    iconType: CsharpIcon,
+  },
+  {
+    title: "Lua",
+    iconType: LuaIcon,
+  },
+  {
+    title: "Kotlin",
+    iconType: KotlinIcon,
+  },
+  {
+    title: "R",
+    iconType: RIcon,
+  },
+  {
+    title: "Bash",
+    iconType: BashIcon,
+  },
+  {
+    title: "LaTeX",
+    iconType: LatexIcon,
+  },
+  {
+    title: "PyTorch",
+    iconType: TorchIcon,
+  },
+  {
+    title: "HuggingFace",
+    iconType: HuggingIcon,
+  },
+  {
+    title: "OpenCV",
+    iconType: OpencvIcon,
+  },
+  {
+    title: "Scikit-Learn",
+    iconType: SKLIcon,
+  },
+  {
+    title: "Numpy",
+    iconType: NumpyIcon,
+  },
+  {
+    title: "pandas",
+    iconType: PandasIcon,
+  },
+  {
+    title: "Matplotlib",
+    iconType: MPLIcon,
+  },
+  {
+    title: "Claude",
+    iconType: ClaudeIcon,
+  },
+  {
+    title: "Next.js",
+    iconType: NextIcon,
+  },
+  {
+    title: "Node.js",
+    iconType: NodeIcon,
+  },
+  {
+    title: "Flask",
+    iconType: FlaskIcon,
+  },
+  {
+    title: "Java Spring",
+    iconType: SprIcon,
+  },
+  {
+    title: "Unity",
+    iconType: UnityIcon,
+  },
+  {
+    title: "Godot",
+    iconType: GodotIcon,
+  },
+  {
+    title: "Raylib",
+    iconType: RaylibIcon,
+  },
+  {
+    title: "SDL",
+    iconType: SDLIcon,
+  },
+  {
+    title: "Odin",
+    iconType: OdinIcon,
+  },
+  {
+    title: "Monogame",
+    iconType: MonogameIcon,
+  },
+  {
+    title: "OpenGL",
+    iconType: OpenGLIcon,
+  },
+  {
+    title: "Docker",
+    iconType: DockerIcon,
+  },
+  {
+    title: "GCP",
+    iconType: GCPIcon,
+  },
+  {
+    title: "Github Actions",
+    iconType: ActionsIcon,
+  },
+  {
+    title: "PostgreSQL",
+    iconType: PostgresIcon,
+  },
+  {
+    title: "CMake",
+    iconType: CmakeIcon,
+  },
+  {
+    title: "Gradle",
+    iconType: GradleIcon,
+  },
+  {
+    title: "Maven",
+    iconType: MavenIcon,
+  },
+  {
+    title: "Postman",
+    iconType: PostmanIcon,
+  },
+  {
+    title: "Jira",
+    iconType: JiraIcon,
+  },
+  {
+    title: "Figma",
+    iconType: FigmaIcon,
+  },
+  {
+    title: "Linux Mint",
+    iconType: MintIcon,
+  },
+  {
+    title: "Pop!_OS",
+    iconType: PoposIcon,
+  },
+  {
+    title: "Fedora Linux",
+    iconType: FedoraIcon,
+  },
+  {
+    title: "Android",
+    iconType: AndroidIcon,
+  },
+  {
+    title: "VSCode",
+    iconType: VScodeIcon,
+  },
+  {
+    title: "PyCharm",
+    iconType: PyCharmIcon,
+  },
+  {
+    title: "IntelliJ",
+    iconType: IntellijIcon,
+  },
+  {
+    title: "CLion",
+    iconType: CLionIcon,
+  },
+  {
+    title: "XCode",
+    iconType: XCodeIcon,
+  },
+  {
+    title: "Neovim",
+    iconType: NvimIcon,
+  },
+  {
+    title: "FFmpeg",
+    iconType: ffmpegIcon,
+  },
+  {
+    title: "Jupyter Notebook",
+    iconType: JnoteIcon,
   },
 ];
 
@@ -105,7 +370,7 @@ export const AboutSection = () => {
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
               <CardHeader
                 title="My Reads"
-                description="Explore the books shaping my perspectives."
+                description="The book that's currently shaping my perspectives."
               />
               <div className="w-40 mx-auto mt-2 md:mt-0">
                 <Image src={bookImage} alt="Book cover" />
@@ -114,15 +379,14 @@ export const AboutSection = () => {
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
               <CardHeader
                 title="My Toolbox"
-                description="Explore the technologies and tools used to craft exceptional
-                digital experiences."
+                description="Some of the technologies and tools I'm comfortable using."
                 className=""
               />
-              <ToolboxItems items={toolboxItems} className="" itemsWrapperClassName="animate-move-left [animation-duration:30s]" />
+              <ToolboxItems items={toolboxItems} className="" itemsWrapperClassName="animate-move-left [animation-duration:120s]" />
               <ToolboxItems
                 items={toolboxItems}
                 className="mt-6"
-                itemsWrapperClassName="animate-move-right [animation-duration:15s]"
+                itemsWrapperClassName="animate-move-right [animation-duration:100s]"
               />
             </Card>
           </div>
