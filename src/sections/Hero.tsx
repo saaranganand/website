@@ -133,7 +133,7 @@ export const HeroSection = () => {
             Saarang Anand
           </h1>
           <p className="mt-4 text-center text-white/60 md:text-lg">
-            Computer science student and software engineer with experience across the full stack. Passionate about writing clean, efficient software.
+            Computer science student @ SFU and software engineer with experience across the full stack. Passionate about writing clean, efficient software.
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
