@@ -21,7 +21,7 @@ const portfolioProjects = [
       { title: "Achieved 92.5% keyword coverage across 40 concepts in evaluation"},
       { title: "Authored systems paper submitted to ACM UIST 2026, a top HCI conference"},
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://youtu.be/W3Wush9SCtM",
     image: speakswarm,
   },
   {
@@ -117,9 +117,9 @@ export const ProjectsSection = () => {
                     ))}
                   </ul>
 
-                  <a href="project.link">
+                  <a href={project.link}>
                     <button className="bg-white text-gray-950 hover:bg-white/70 transition duration-200 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
-                      <span>Visit Github Repository</span>
+                      <span>Visit Project</span>
                       <ArrowUpRightIcon className="size-4" />
                     </button>
                   </a>
