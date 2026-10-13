@@ -1,13 +1,11 @@
 import React from "react";
 import vibe from "@/assets/images/home-loggedin.png";
-import hockey from "@/assets/images/hockey.png";
 import medical from "@/assets/images/medical.png";
-import speakswarm from "@/assets/images/bannerimage_placeholder.png";
+import speakswarm from "@/assets/images/usageexample1.png";
 import netai from "@/assets/images/1764903068285.jpeg";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
@@ -60,26 +58,14 @@ const portfolioProjects = [
     link: "https://github.com/saaranganand/vibe-276",
     image: vibe,
   },
-  {
-    company: "CMPT 371",
-    year: "2025",
-    title: "Air Hockey",
-    results: [
-      { title: "Built a multiplayer game in Python using a client-server architecture" },
-      { title: "Implemented game physics, collision detection, and synchronized server state" },
-      { title: "Designed a JSON server communication protocol with mutex locking" },
-    ],
-    link: "https://github.com/saaranganand/air-hockey",
-    image: hockey,
-  },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="pb-16 lg:py-24">
+    <section id="projects" className="py-12 lg:py-16">
       <div className="container">
         <SectionHeader
-          eyebrow="Real-World Results"
+          eyebrow="Selected Work"
           title="Featured Projects"
           description="Some of the things I've worked on."
         />
@@ -96,7 +82,7 @@ export const ProjectsSection = () => {
             >
               <div className="lg:grid lg:grid-cols-[45%_55%] lg:gap-0">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
+                  <div className="inline-flex gap-2 font-semibold uppercase tracking-widest text-sm text-emerald-300">
                     <span>{project.company}</span>
                     <span>&bull;</span>
                     <span>{project.year}</span>
@@ -110,25 +96,28 @@ export const ProjectsSection = () => {
 
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.results.map((result) => (
-                      <li className="flex gap-2 text-sm md:text-base text-white/50">
+                      <li key={result.title} className="flex gap-2 text-sm md:text-base text-white/50">
                         <CheckCircleIcon className="size-5 md:size-6" />
                         <span>{result.title}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <a href={project.link}>
-                    <button className="bg-white text-gray-950 hover:bg-white/70 transition duration-200 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
-                      <span>Visit Project</span>
-                      <ArrowUpRightIcon className="size-4" />
-                    </button>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-white/15 hover:bg-white/5 transition duration-300 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8"
+                  >
+                    <span>Visit Project</span>
+                    <ArrowUpRightIcon className="size-4" />
                   </a>
                 </div>
                 <div className="relative overflow-hidden mt-8 h-64 md:h-80 lg:mt-0 lg:h-full">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-fill"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
               </div>

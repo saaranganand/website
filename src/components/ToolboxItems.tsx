@@ -33,7 +33,7 @@ export const ToolboxItems = ({
           <Fragment key={index}>
             {items.map((item) => {
               const classes =
-                "inline-flex items-center gap-4 py-2 px-3 outline outline-2 outline-white/10 rounded-lg transition-transform duration-200 hover:scale-110";
+                "inline-flex items-center gap-4 py-2 px-3 border border-white/10 rounded-lg transition-colors duration-200 hover:bg-white/5";
               const inner = (
                 <>
                   <TechIcon component={item.iconType} />

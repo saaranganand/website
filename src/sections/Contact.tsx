@@ -1,56 +1,30 @@
-"use client";
-
-import { useState } from "react";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
+import { Card } from "@/components/Card";
 
 export const ContactSection = () => {
-  const [glowPos, setGlowPos] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <div className="py-16 pt-12 lg:py-24 lg:pt-20">
+    <div className="py-12 lg:py-16">
       <div className="container">
-        <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 py-8 px-10 rounded-3xl text-center md:text-left relative overflow-hidden z-0">
-          <div
-            className="absolute inset-0 opacity-5 -z-10"
-            style={{
-              backgroundImage: `url(${grainImage.src})`,
-            }}
-          ></div>
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
+        <Card className="p-8 md:p-10 text-center md:text-left">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center md:justify-between">
             <div>
               <h2 className="font-serif text-2xl md:text-3xl">
-                Let's create something amazing together
+                Let's get in touch
               </h2>
-              <p className="text-sm md:text-base mt-2">
-                Ready to bring your next project to life? Let's connect and
-                discuss how I can help you achieve your goals.
+              <p className="text-sm md:text-base text-white/60 mt-2">
+                Whether it's a role, a project, or just to chat, my inbox is
+                always open.
               </p>
             </div>
-            <div>
-              <a href="mailto:saaranganand2013@gmail.com">
-                <button
-                  className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-900 relative overflow-hidden"
-                  onMouseMove={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    setGlowPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-                  }}
-                  onMouseEnter={() => setIsHovered(true)}
-                  onMouseLeave={() => setIsHovered(false)}
-                  style={{
-                    background: isHovered
-                      ? `radial-gradient(circle 80px at ${glowPos.x}px ${glowPos.y}px, rgba(110,231,183,0.25), rgba(56,189,248,0.15), transparent), rgb(17,24,39)`
-                      : undefined,
-                  }}
-                >
-                  <span className="font-semibold">Contact Me</span>
-                  <ArrowUpRightIcon className="size-4" />
-                </button>
-              </a>
-            </div>
+            <a
+              href="mailto:saaranganand2013@gmail.com"
+              className="inline-flex items-center gap-2 bg-white text-gray-900 h-12 px-6 rounded-xl w-max hover:bg-white/70 transition duration-300 shrink-0"
+            >
+              <span className="font-semibold">Contact Me</span>
+              <ArrowUpRightIcon className="size-4" />
+            </a>
           </div>
-        </div>
+        </Card>
       </div>
     </div>
   );
