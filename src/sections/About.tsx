@@ -61,6 +61,7 @@ import HTMLIcon from "@/assets/icons/html5.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import GithubIcon from "@/assets/icons/github.svg";
 import PythonIcon from "@/assets/icons/python-logo-only.svg";
+import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
@@ -410,6 +411,31 @@ const hobbies = [
   },
 ];
 
+const awards = [
+  {
+    title: "Dean's Honour Roll",
+    issuer: "Simon Fraser University",
+    terms: [
+      {
+        label: "Spring 2026",
+        href: "https://www.sfu.ca/students/honour-rolls/deans-honour-roll/spring-2026.html",
+      },
+      {
+        label: "Fall 2025",
+        href: "https://www.sfu.ca/students/honour-rolls/deans-honour-roll/fall-2025.html",
+      },
+      {
+        label: "Spring 2025",
+        href: "https://www.sfu.ca/students/honour-rolls/deans-honour-roll/spring-2025.html",
+      },
+      {
+        label: "Spring 2024",
+        href: "https://www.sfu.ca/students/honour-rolls/deans-honour-roll/spring-2024.html",
+      },
+    ],
+  },
+];
+
 export const AboutSection = () => {
   return (
     <div id="about" className="py-12 lg:py-16">
@@ -479,6 +505,37 @@ export const AboutSection = () => {
               </div>
             </Card>
           </div>
+          <Card className="md:grid md:grid-cols-5 lg:grid-cols-3 md:items-center">
+            <CardHeader
+              title="Recognition"
+              description="A few milestones along the way."
+              className="md:col-span-2 lg:col-span-1"
+            />
+            <div className="flex flex-col gap-6 px-6 pb-6 md:col-span-3 md:py-8 md:pl-0 md:pr-10 lg:col-span-2">
+              {awards.map((award) => (
+                <div key={award.title}>
+                  <p className="font-semibold uppercase tracking-widest text-sm text-emerald-300">
+                    {award.issuer}
+                  </p>
+                  <h4 className="font-serif text-2xl mt-2">{award.title}</h4>
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    {award.terms.map((term) => (
+                      <a
+                        key={term.href}
+                        href={term.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 py-2 px-3 border border-white/10 rounded-lg text-sm font-semibold text-white/70 transition-colors duration-200 hover:bg-white/5 hover:text-white"
+                      >
+                        <span>{term.label}</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
       </div>
     </div>
