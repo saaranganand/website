@@ -15,9 +15,9 @@ const portfolioProjects = [
     year: "2026",
     title: "SpeakSwarm",
     results: [
-      { title: "Built novel AI pipeline that generates swarm robot shapes for voice assistants"},
+      { title: "Built the first system to generate and execute co-speech gestures on a non-humanoid robot swarm"},
       { title: "Achieved 92.5% keyword coverage across 40 concepts in evaluation"},
-      { title: "Authored systems paper submitted to ACM UIST 2026, a top HCI conference"},
+      { title: "Co-authored a full paper submitted to ACM UIST 2026 and ACM CHI 2027"},
     ],
     link: "https://youtu.be/W3Wush9SCtM",
     image: speakswarm,
@@ -81,7 +81,7 @@ export const ProjectsSection = () => {
               }}
             >
               <div className="lg:grid lg:grid-cols-[45%_55%] lg:gap-0">
-                <div className="lg:pb-16">
+                <div className="lg:pb-16 lg:pr-12">
                   <div className="inline-flex gap-2 font-semibold uppercase tracking-widest text-sm text-emerald-300">
                     <span>{project.company}</span>
                     <span>&bull;</span>
@@ -97,7 +97,7 @@ export const ProjectsSection = () => {
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.results.map((result) => (
                       <li key={result.title} className="flex gap-2 text-sm md:text-base text-white/50">
-                        <CheckCircleIcon className="size-5 md:size-6" />
+                        <CheckCircleIcon className="size-5 md:size-6 shrink-0" />
                         <span>{result.title}</span>
                       </li>
                     ))}

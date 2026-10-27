@@ -450,7 +450,7 @@ export const AboutSection = () => {
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
               <CardHeader
                 title="My Reads"
-                description="Books currently shaping my perspectives."
+                description="Books I've been into lately."
               />
               <div className="w-40 mx-auto mt-2 md:mt-0">
                 <a

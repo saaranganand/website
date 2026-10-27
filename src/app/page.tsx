@@ -1,6 +1,7 @@
 import { Header } from "@/sections/Header"
 import { HeroSection } from "@/sections/Hero";
 import { ProjectsSection } from "@/sections/Projects"
+import { ExperienceSection } from "@/sections/Experience";
 import { TestimonialsSection } from '@/sections/Testimonials'
 import { AboutSection } from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <ProjectsSection />
+      <ExperienceSection />
       {/* <TestimonialsSection /> */}
       <AboutSection />
       <ContactSection />

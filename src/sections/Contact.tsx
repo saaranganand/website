@@ -12,7 +12,7 @@ export const ContactSection = () => {
                 Let's get in touch
               </h2>
               <p className="text-sm md:text-base text-white/60 mt-2">
-                Whether it's a role, a project, or just to chat, my inbox is
+                Whether it's a role, a project, or just to chat: my inbox is
                 always open.
               </p>
             </div>

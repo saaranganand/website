@@ -25,7 +25,7 @@ export const HeroSection = () => {
               <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
             </div>
             <div className="text-sm font-medium">
-              {AVAILABLE ? "Available for new projects" : "SWE co-op at Grit Financial Inc."}
+              {AVAILABLE ? "Available for new projects" : "Part-time SWE at Grit Financial Inc."}
             </div>
           </div>
         </div>
