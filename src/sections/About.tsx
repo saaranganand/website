@@ -1,6 +1,7 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import bookImage from "@/assets/images/book-cover.png";
+import republicCover from "@/assets/images/book-cover.png";
+import sailorCover from "@/assets/images/book-cover-2.png";
 import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import TypescriptIcon from "@/assets/icons/ts.svg";
@@ -67,6 +68,7 @@ import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import { FloatingHobbies } from "@/components/FloatingHobbies";
+import { BookStack } from "@/components/BookStack";
 
 const toolboxItems = [
   {
@@ -366,6 +368,21 @@ const toolboxItems = [
   },
 ];
 
+const books = [
+  {
+    title: "The Republic",
+    author: "Plato",
+    cover: republicCover,
+    href: "https://www.goodreads.com/book/show/30289.The_Republic",
+  },
+  {
+    title: "The Sailor Who Fell from Grace with the Sea",
+    author: "Yukio Mishima",
+    cover: sailorCover,
+    href: "https://www.goodreads.com/en/book/show/162332.The_Sailor_Who_Fell_from_Grace_with_the_Sea",
+  },
+];
+
 const hobbies = [
   {
     title: "Drumming",
@@ -447,21 +464,12 @@ export const AboutSection = () => {
         />
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-            <Card className="h-[320px] md:col-span-2 lg:col-span-1">
+            <Card className="h-[320px] flex flex-col md:col-span-2 lg:col-span-1">
               <CardHeader
                 title="My Reads"
                 description="Books I've been into lately."
               />
-              <div className="w-40 mx-auto mt-2 md:mt-0">
-                <a
-                  href="https://www.goodreads.com/book/show/30289.The_Republic"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block transition-transform duration-300 hover:scale-105"
-                >
-                  <Image src={bookImage} alt="Book cover" />
-                </a>
-              </div>
+              <BookStack books={books} className="flex-1 mb-4" />
             </Card>
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
               <CardHeader
