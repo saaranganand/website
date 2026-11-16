@@ -3,6 +3,7 @@ import vibe from "@/assets/images/home-loggedin.png";
 import medical from "@/assets/images/medical.png";
 import speakswarm from "@/assets/images/usageexample1.png";
 import netai from "@/assets/images/1764903068285.jpeg";
+import ledsure from "@/assets/ledsure_demo.gif";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -21,6 +22,20 @@ const portfolioProjects = [
     ],
     link: "https://youtu.be/W3Wush9SCtM",
     image: speakswarm,
+  },
+  {
+    company: "Personal Project",
+    year: "2026",
+    title: "LedSure",
+    results: [
+      { title: "Built a double-entry ledger and payments API in Go and PostgreSQL that never loses/double-posts money" },
+      { title: "Made payments idempotent: 100 concurrent retries of 1 request post exactly once" },
+      { title: "Prevented overdraft races with deadlock-free row locking, proven via property-based tests" },
+    ],
+    link: "https://github.com/saaranganand/ledsure",
+    image: ledsure,
+    // terminal output starts at the left edge, so crop from the right
+    imageClassName: "object-left-top",
   },
   {
     company: "ExploreCSR",
@@ -117,7 +132,7 @@ export const ProjectsSection = () => {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className={`absolute inset-0 w-full h-full object-cover ${project.imageClassName ?? ""}`}
                   />
                 </div>
               </div>

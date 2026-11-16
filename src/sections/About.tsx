@@ -2,6 +2,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import republicCover from "@/assets/images/book-cover.png";
 import sailorCover from "@/assets/images/book-cover-2.png";
+import batmanCover from "@/assets/images/book-cover-3.png";
 import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import TypescriptIcon from "@/assets/icons/ts.svg";
@@ -380,6 +381,12 @@ const books = [
     author: "Yukio Mishima",
     cover: sailorCover,
     href: "https://www.goodreads.com/en/book/show/162332.The_Sailor_Who_Fell_from_Grace_with_the_Sea",
+  },
+  {
+    title: "Absolute Batman, Vol. 1",
+    author: "Scott Snyder & Nick Dragotta",
+    cover: batmanCover,
+    href: "https://www.goodreads.com/book/show/223329645-absolute-batman-vol-1",
   },
 ];
 
