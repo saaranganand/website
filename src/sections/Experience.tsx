@@ -12,6 +12,8 @@ type Experience = {
   link?: { label: string; href: string };
 };
 
+const isCurrent = (period: string) => period.includes("Present");
+
 const experiences: Experience[] = [
   {
     company: "Grit Financial Inc.",
@@ -113,7 +115,8 @@ export const ExperienceSection = () => {
                 <h3 className="font-serif text-2xl md:text-3xl mt-2">
                   {experience.company}
                 </h3>
-                {/* Role ladder: most recent role first, highlighted in emerald */}
+                {/* Role ladder: most recent role first. Current roles get an
+                    emerald dot; a role without its own period goes by the company's */}
                 <ol className="flex flex-col gap-3 mt-5">
                   {experience.roles.map((role, roleIndex) => (
                     <li key={role.title} className="relative pl-5">
@@ -123,7 +126,7 @@ export const ExperienceSection = () => {
                       <span
                         className={twMerge(
                           "absolute left-0 top-[7px] size-2.5 rounded-full bg-gray-600",
-                          roleIndex === 0 && "bg-emerald-300"
+                          isCurrent(role.period ?? experience.period) && "bg-emerald-300"
                         )}
                       />
                       <p className="font-semibold">{role.title}</p>
